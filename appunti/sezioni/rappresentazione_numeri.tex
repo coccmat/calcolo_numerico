@@ -1,0 +1,39 @@
+\documentclass[15pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Numeri di macchina e analisi errori}
+\begin{document}
+
+\author{Matteo Cocciniglia}
+\date{02/03/2022}
+\maketitle
+\section{Rappresentazione posizionale}
+Per rappresentare un qualsiasi numero $\textbf{\textit{N}}\geq1$ in notazione posizionale usando una base $\beta$ (dove $\beta$ = numero di simboli $S-1$)  si può stabilire la relazione \\\textbf{\textit{N}}= $( c_p c_{p-1},\cdots c_0)_\beta = 
+( c_p\beta^{p} c_{p-1}\beta^{p-1}... c_0) $.\\ Per un numero $\alpha< 1$ si ha $ \alpha=(0.c_p c_{p-1},\cdots c_0)_\beta $ rapresentabile anche come la sommatoria \(\sum_{i=1}^{\infty} a_i\beta^{-i}\) quindi si ha che un qualsiasi numero $\alpha\in \Re$ è rapresentabile come \[ \alpha = \sum_{i=1}^{\infty} a_i\beta^{-i}\beta^p\]\\ dove p è il numero di simboli dopo il punto radice $\neq$ 0.\\
+Riassumendo: un qualsiasi numero $\alpha \in \Re$ è rappresentabile in notazione \textbf{Posizionale} come $segno(\alpha)m\beta^p$ dove $m=\sum_{i=1}^{\infty} a\beta^{-i}$
+\section{Rappresentazione fixed point}
+Per memorizzare un qualsiasi numero reale ma in uno spazio finito di memorie viene uitilizzata la rappresentazione a \textbf{virgola mobile} che a differenza di altre rapresentazioni (es. virgola fissa) permette grande flessibilità. il formato di rappresentazione è cartterizzato da 4 elementi: \[ \beta, t ,L, U \].
+\begin{itemize}
+\item $\beta$ è la base usata, di norma base 2. 
+\item $t$ è il numero massimo di numeri dedicato alla rapresentazione della mantissa, di norma \textbf{single precision} = 23 \textbf{double precision} = 52.
+\item $L,U$ sono rispettivamente il \textbf{L}ower e \textbf{U}pper bound per la rappresentazione di un esponente $r$ quindi il numero minimo e massimo che si può rappresentare, di norma $[-127,+128]$.
+\end{itemize}
+altre caratteristiche del insieme dei numeri floating point \begin{itemize}
+\item è un insieme \textbf{discreto} e \textbf{finito}.
+\item è \textbf{simmetrico} al origine, quindi per ogni numero esiste l'opposto.
+\item la sua cardinalità è data da $card(\beta, t ,L, U)=2(\beta-1)\beta^{t-1}(U-L+1)$\\dove
+\begin{itemize}
+\item $(U-L+1)$ è il numero di tutti i possibili esponenti
+\item $\beta^{t-1}$  è il numero di tutti i numero di valori che ogni posizione dedicata alla mantissa può prendere escluso un elemento.
+\item $\beta-1$ è il numero che il primo elemento può prendere (-1 perchè non può essere zero).
+\item 2 perché un valore può essere sia positivo che negativo. 
+\end{itemize}
+\end{itemize}
+\section{Errori di macchina e operazioni}
+Dato che l'insieme dei \textbf{Floating point} è un insieme discreto e finito spesso si fa uso di \textbf{troncamento} e \textbf{arrotondamento} per rapprensentare i numeri non appartenenti all'insieme di riferimento ottenendo una perdita di informazione chiamata \textbf{\textit{errore}}.\\
+L'\textbf{errore assoluto }nella rappresentazione di un numero $\alpha$ è la differenza tra il numero è la sua rappresentazione, quindi si otttiene che: \( E_a = \mid \alpha-\alpha^*\mid \) dove $\alpha^*$ è la rapresentazione macchiana.\\
+L'errore relativo invece è dato da \( E_r =  \frac{E_a}{\mid\alpha\mid}\).
+
+
+
+\end{document}
