@@ -1,19 +1,20 @@
-\documentclass[15pt,a4paper]{article}
+\documentclass[../main.tex]{subfiles}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 
-\title{Numeri di macchina e analisi errori}
-\begin{document}
 
-\author{Matteo Cocciniglia}
-\date{02/03/2022}
-\maketitle
+\title{Numeri di macchina e analisi errori}
+%\author{Matteo Cocciniglia}
+%\date{02/03/2022}
+\begin{document}
+%\maketitle
+
 \section{Rappresentazione posizionale}
 Per rappresentare un qualsiasi numero $\textbf{\textit{N}}\geq1$ in notazione posizionale usando una base $\beta$ (dove $\beta$ = numero di simboli $S-1$)  si può stabilire la relazione \\\textbf{\textit{N}}= $( c_p c_{p-1},\cdots c_0)_\beta = 
 ( c_p\beta^{p} c_{p-1}\beta^{p-1}... c_0) $.\\ Per un numero $\alpha< 1$ si ha $ \alpha=(0.c_p c_{p-1},\cdots c_0)_\beta $ rapresentabile anche come la sommatoria \(\sum_{i=1}^{\infty} a_i\beta^{-i}\) quindi si ha che un qualsiasi numero $\alpha\in \Re$ è rapresentabile come \[ \alpha = \sum_{i=1}^{\infty} a_i\beta^{-i}\beta^p\]\\ dove p è il numero di simboli dopo il punto radice $\neq$ 0.\\
 Riassumendo: un qualsiasi numero $\alpha \in \Re$ è rappresentabile in notazione \textbf{Posizionale} come $segno(\alpha)m\beta^p$ dove $m=\sum_{i=1}^{\infty} a\beta^{-i}$
 \section{Rappresentazione floating point}
-\label{sec:try}
+\label{sec:rapresentazione_floating_point}
 Per memorizzare un qualsiasi numero reale ma in uno spazio finito di memorie viene uitilizzata la rappresentazione a \textbf{virgola mobile} che a differenza di altre rapresentazioni (es. virgola fissa) permette grande flessibilità. il formato di rappresentazione è cartterizzato da 4 elementi: \[ \beta, t ,L, U \].
 \begin{itemize}
 \item $\beta$ è la base usata, di norma base 2. 
@@ -41,7 +42,7 @@ Inoltre si ha che l'errore relativo ottenuto è sempre minore o uguale alla \tex
 \item $k=\frac{1}{2}$ nel caso si usi arrotondamento.
 \end{itemize}
 questo risultato è chiamato \textbf{teorema dell'errore di rappresentazione dei numeri reali}.\\
-Dato che l'insieme dei floating point $F$ non è chiuso alle operazioni aritmetiche si possono verificare, oltre ai casi di \textbf{overflow} e \textbf{underflow}, dei casi in cui il numero non è rappresentabile pur essendo compreso tra il numero massimo e il numero minimo rapresentabile del insieme, difatti si ha che un operazione tra numeri floating point restituisce un numero reale che andrà trasformato seguendo la logica vista nel capitolo \nameref{sec:try}
+Dato che l'insieme dei floating point $F$ non è chiuso alle operazioni aritmetiche si possono verificare, oltre ai casi di \textbf{overflow} e \textbf{underflow}, dei casi in cui il numero non è rappresentabile pur essendo compreso tra il numero massimo e il numero minimo rapresentabile del insieme, difatti si ha che un operazione tra numeri floating point restituisce un numero reale che andrà trasformato seguendo la logica vista nel capitolo \nameref{sec:rapresentazione_floating_point}
 
 
 \end{document}
