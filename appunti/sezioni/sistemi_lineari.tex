@@ -1,0 +1,37 @@
+\documentclass[../main.tex]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{mdframed}
+\usepackage{amsmath}
+
+\title{Sistemi lineari}
+\begin{document}
+\author{Matteo Cocciniglia}
+\date{02/03/2022}
+\maketitle
+\section{matrici simmetriche}
+look at pag 167\\%DELL
+Ricordando che:\begin{itemize}
+\item Una matrice quadrata $A$ è simmetrica se $A=A^T$.
+\item Per memorizzare una matrice in modo ottimizzato è richiesto $\simeq \frac{n^2}{2}$ locazioni di memoria.
+\end{itemize} 
+\subsection{Teorema di fattorizzazzione di Gauss per matrici simmetriche}
+\begin{mdframed}
+
+Se $A$ è simmetrica e tutti i suoi  minori principali sono diversi da zero, allora\\
+esistono una matrice triangolarte inferiore $L$ una diagonale $D$ con elementi $\neq 0$\\
+tali che $A=LDL^T$
+\end{mdframed}
+\subsection{dimsotrazione}
+Sfruttando l'ipotesi che tutti i minori di $A$ sono $\neq 0$  dai risultati del \textbf{teorema di fattorizazzione di Gauss} %%da scrivere
+si ottiene che $A=LU$ dove $L$ è una matrice triangolare inferiore con diagonale unitaria e $U$ matrice diagonale superiore.\\
+Si definisce  $D=\begin{pmatrix}
+  u_{11} & 0  & \cdots & \\
+  0 & u_{22}  & & \\
+  \vdots & & \ddots & \\
+  &  &   & u_{nn}\\
+\end{pmatrix}$,quindi si ha che $A = LDD^{-1}U$\\ 
+dato che $DD^{-1}$ è la matrice identità il risultato non è alterato.\\
+Provare che $D^{-1}U\stackrel{?}{=}L^{T}$. Sfruttando la simmetria della matrice $A=A^T$ si ottiene $A=(LDD^{-1}U)^T$.  
+
+\end{document}
