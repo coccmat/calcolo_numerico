@@ -32,6 +32,6 @@ Si definisce  $D=\begin{pmatrix}
   &  &   & u_{nn}\\
 \end{pmatrix}$,quindi si ha che $A = LDD^{-1}U$\\ 
 dato che $DD^{-1}$ è la matrice identità il risultato non è alterato.\\
-Provare che $D^{-1}U\stackrel{?}{=}L^{T}$. Sfruttando la simmetria della matrice $A=A^T$ si ottiene $A=(LDD^{-1}U)^T$.  
+Provare che $D^{-1}U\stackrel{?}{=}L^{T}$:\\ Sfruttando la simmetria della matrice $A=A^T$ si ottiene $A=(LDD^{-1}U)^T$. Quindi seguendo i passi algebrici $L^{T}D(D^{-1}U)^T \rightarrow \texbf{LL^{-1}}LDD^{-1}U = L^{-1}L^{T}D(D^{-1}U)^T$, ricordando che $LL^{-1}$ è la matrice Identità si arriva alla seguente uaglianza $D(D^{-1}U)^T=L^TL^{-1}LDD^{-1}U$ inoltre semplificando $L^T$ moltiplicandolo per la sua inversa si arriva al risultato finale $D(D^{-1}U)^TL^{T^{-1}}=L^{-1}DD^{-1}U$, notando che  $D(D^{-1}U)^TL^{T^{-1}} $ è una matrice triangolare superiore e che $L^{-1}DD^{-1}U$ è una triangolare inferiore si ha che tutti gli elementi non nella diagonale sono uguali a zero; quindi $D(D^{-1}U)^TL^{T^{-1}}$ è una matrice diagonale da qui otteniamo che $(D^{-1}U)^TL^{T^{-1}}$ è anchessa una diagonale e sicuramente anche unitaria dato il risultato appena ottenuto. Quindi possiamo concludere che $D(D^{-1}U)^TL^{T^{-1}} = I \rightarrow D(D^{-1}U)^T = L^{T^{-1}}=L^{T}$   
 
 \end{document}
